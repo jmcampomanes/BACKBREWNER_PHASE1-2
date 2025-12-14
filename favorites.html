@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Favorites — Backbrewner Café</title>
+
+  <link rel="stylesheet" href="backbrewner_css/style.css">
+  <link rel="stylesheet" href="backbrewner_css/animations.css">
+  <link rel="stylesheet" href="backbrewner_css/menuPage.css">
+  <link rel="stylesheet" href="backbrewner_css/favorites.css"> 
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+    <a href="index.html" class="logo">
+      <img src="images/logo.png" alt="Backbrewner Café Logo" class="logo-img">
+        <span class="logo-text">Backbrewner Café</span>      
+    </a>
+    <span class="menu-btn">☰</span>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="menu.html" class="active">Menu</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  </header>
+
+  <main style="padding-top:85px;">
+    <section id="menu-page">
+
+      <div class="menu-tabs">
+        <a href="menu.html">Menu</a>
+        <a href="featured.html">Featured</a>
+        <a href="previous.html">Previous</a>
+        <a href="favorites.html" class="active">Favorites</a>
+      </div>
+
+      <section class="favorites-container">
+        <h2 class="favorites-title fade-in">❤️ Customers Favorite Drinks & Foods</h2>
+
+        <div class="favorites-grid">
+          <div class="favorites-card fade-in" onclick="openModal('fav_caramel_latte')">
+            <img src="images/caramel_latte.png" alt="Caramel Latte">
+            <h3>Caramel Latte</h3>
+            <p>Customer Favorite</p>
+          </div>
+
+          <div class="favorites-card fade-in" onclick="openModal('fav_matcha_cream')">
+            <img src="images/matcha_cream.png" alt="Matcha Cream">
+            <h3>Matcha Cream</h3>
+            <p>Top Rated</p>
+          </div>
+
+          <div class="favorites-card fade-in" onclick="openModal('fav_vanilla_brew')">
+            <img src="images/vanilla_iced_brew.png" alt="Vanilla Iced Brew">
+            <h3>Vanilla Iced Brew</h3>
+            <p>Seasonal Favorite</p>
+          </div>
+
+          <div class="favorites-card fade-in" onclick="openModal('fav_coffee_jelly')">
+            <img src="images/coffee_jelly.png" alt="Coffee Jelly">
+            <h3>Coffee Jelly</h3>
+            <p>Limited Edition</p>
+          </div>
+
+          <div class="favorites-card fade-in" onclick="openModal('fav_brown_sugar')">
+            <img src="images/brown_sugar_latte.png" alt="Brown Sugar Latte">
+            <h3>Brown Sugar Latte</h3>
+            <p>Customer Favorite</p>
+          </div>
+        </div>
+      </section>
+
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Backbrewner Café
+  </footer>
+
+  <button id="toTop">↑</button>
+
+  <div id="productModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="modal-image-container">
+        <img id="modal-img" src="" alt="Product Image">
+        <div id="featured-sticker" style="display:none;"></div> 
+      </div>
+      <div class="modal-text">
+        <h2 id="modal-name">Product Name</h2>
+        <p class="modal-meta">
+          <span id="modal-calories">0</span> Calories | ₱<span id="modal-price">0</span>
+        </p>
+        <div class="details-section">
+          <h4>Details</h4>
+          <p id="modal-description">Description...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="backbrewner_js/script.js"></script>
+  <script src="backbrewner_js/scroll-effects.js"></script>
+  <script src="backbrewner_js/menu-modal.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Gallery — Backbrewner Café</title>
+  
+  <link rel="stylesheet" href="backbrewner_css/style.css">
+  <link rel="stylesheet" href="backbrewner_css/animations.css">
+  
+  <link rel="stylesheet" href="backbrewner_css/gallery.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Backbrewner Café Logo" class="logo-img">
+        <span class="logo-text">Backbrewner Café</span>  
+      </a>
+      <span class="menu-btn">☰</span>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main style="padding-top:120px;">
+    <section class="fade-in">
+      <h1>Gallery</h1>
+      <p>A peek into the cozy visual world of Backbrewner.</p>
+      <div class="scroll-down-arrow-contact">↓</div>
+    </section>
+
+    <section class="fade-in">
+      <div class="gallery-grid">
+        <img src="images/warm_lights.png" alt="Warm lights" class="gallery-item">
+        <img src="images/coffee_close_up.png" alt="Coffee closeup" class="gallery-item">
+        <img src="images/pastries_display.png" alt="Pastries display" class="gallery-item">
+        <img src="images/cozy_corner.png" alt="Cozy corner" class="gallery-item">
+        <img src="images/steam_cup.png" alt="Steam & cup" class="gallery-item">
+        <img src="images/barista_art.png" alt="Barista art" class="gallery-item">
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightboxClose">✕</span>
+    <img src="" alt="Large view" id="lightboxImage">
+  </div>
+
+  <footer>
+    © 2025 Backbrewner Café
+  </footer>
+
+  <button id="toTop">↑</button>
+
+  <script src="backbrewner_js/script.js"></script>
+  <script src="backbrewner_js/scroll-effects.js"></script>
+  
+  <script src="backbrewner_js/gallery.js"></script>
+</body>
+</html>

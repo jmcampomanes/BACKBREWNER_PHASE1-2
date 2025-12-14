@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Products — Backbrewner Café</title>
+
+  <link rel="stylesheet" href="backbrewner_css/style.css">
+  <link rel="stylesheet" href="backbrewner_css/animations.css">
+  <link rel="stylesheet" href="backbrewner_css/menuPage.css">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Backbrewner Café Logo" class="logo-img">
+        <span class="logo-text">Backbrewner Café</span>  
+      </a>
+      <span class="menu-btn">☰</span>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="menu.html" class="active">Menu</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main style="padding-top:85px;">
+
+    <section id="menu-page">
+
+      <div class="menu-tabs">
+        <a href="menu.html" class="active">Menu</a>
+        <a href="featured.html">Featured</a>
+        <a href="previous.html">Previous</a>
+        <a href="favorites.html">Favorites</a>
+      </div>
+
+      <div class="menu-container">
+
+        <aside class="side-menu">
+          <div class="menu-category">
+            <a href="menu.html"><button class="dropdown-btn">Drinks ▾</button></a>
+            <div class="dropdown-list">
+              <a href="menu.html#hot-coffee">Hot Coffee</a>
+              <a href="menu.html#cold-coffee">Cold Coffee</a>
+              <a href="menu.html#hot-tea">Hot Tea</a>
+              <a href="menu.html#cold-tea">Cold Tea</a>
+              <a href="menu.html#fruit-tea">Fruit Tea</a>
+              <a href="menu.html#frappuccino">Frappuccino</a>
+              <a href="menu.html#bottled-beverages">Bottled Beverages</a>
+            </div>
+          </div>
+
+          <div class="menu-category">
+            <a href="foodPage.html"><button class="dropdown-btn">Foods ▾</button></a>
+            <div class="dropdown-list">
+              <a href="foodPage.html#breakfast">Breakfast</a>
+              <a href="foodPage.html#lunch">Lunch</a>
+              <a href="foodPage.html#pastries">Pastries</a>
+              <a href="foodPage.html#dinner">Dinner</a>
+            </div>
+          </div>
+
+          <div class="menu-category">
+            <button class="dropdown-btn">Products ▾</button>
+            <div class="dropdown-list">
+              <a href="#coffee-beans">Coffee Beans</a>
+              <a href="#bottled-drinks">Bottled Drinks</a>
+              <a href="#powdered-drinks">Powdered Drinks</a>
+            </div>
+          </div>
+        </aside>
+
+        <div class="menu-items">
+          <h2>Menu / <b>Products</b></h2>
+
+          <div id="coffee-beans" class="menu-section">
+            <h3>Coffee Beans</h3>
+            <p>Whole & Ground</p>
+            <div class="grid">
+              <a href="javascript:void(0);" onclick="openModal('house_blend')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/house_blend_coffee_beans.jpg"></div><p>House Blend<br><span>Signature</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('espresso_roast')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/expresso_roast_beans.jpg"></div><p>Espresso Roast<br><span>Strong</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('medium_roast')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/medium_roast_beans.jpg"></div><p>Medium Roast<br><span>Balanced</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('dark_roast')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/dark_roast_beans.jpg"></div><p>Dark Roast<br><span>Intense</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('decaf_beans')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/decaf_coffee_beans.jpg"></div><p>Decaf Beans<br><span>Caffeine-Free</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('colombia_origin')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/single_origin_beans_colombia.jpg"></div><p>Colombia Origin<br><span>Rich</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('ethiopia_origin')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/single_origin_beans_ethiopia.jpg"></div><p>Ethiopia Origin<br><span>Fruity</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('brazil_origin')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/single_origin_beans_brazil.jpg"></div><p>Brazil Origin<br><span>Nutty</span></p></div>
+              </a>
+            </div>
+          </div>
+
+          <br><hr><br>
+
+          <div id="bottled-drinks" class="menu-section">
+            <h3>Bottled Drinks</h3>
+            <p>Ready-to-Go</p>
+            <div class="grid">
+              <a href="javascript:void(0);" onclick="openModal('bottled_iced_coffee')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/bottled_iced_coffee.png"></div><p>Bottled Iced Coffee<br><span>Classic</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('bottled_cold_brew')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/bottled_cold_brew.png"></div><p>Bottled Cold Brew<br><span>Steeped</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('bottled_matcha')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/bottled_macha_latte.png"></div><p>Bottled Matcha<br><span>Green Tea</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('bottled_choco')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/bottled_choco_drink.png"></div><p>Bottled Choco<br><span>Sweet</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('coffee_concentrate')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/coffee_concentrated_bottle.png"></div><p>Coffee Concentrate<br><span>Potent</span></p></div>
+              </a>
+            </div>
+          </div>
+
+          <br><hr><br>
+
+          <div id="powdered-drinks" class="menu-section">
+            <h3>Powdered Drinks</h3>
+            <p>Instant, Drip & Merchandise</p>
+            <div class="grid">
+              <a href="javascript:void(0);" onclick="openModal('coffee_drip_bags')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/coffee_drip_bags.png"></div><p>Coffee Drip Bags<br><span>Single Serve</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('instant_coffee')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/instant_coffee_sashets.png"></div><p>Instant Coffee<br><span>Sachets</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('branded_mug')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/branded_ceramic_mug.png"></div><p>Branded Mug<br><span>Ceramic</span></p></div>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2025 Backbrewner Café
+  </footer>
+
+  <button id="toTop">↑</button>
+
+  <div id="productModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="modal-image-container">
+        <img id="modal-img" src="" alt="Product Image">
+      </div>
+      <div class="modal-text">
+        <h2 id="modal-name">Product Name</h2>
+        <p class="modal-meta">
+          <span id="modal-calories">0</span> Calories | ₱<span id="modal-price">0</span>
+        </p>
+        <div class="details-section">
+          <h4>Details</h4>
+          <p id="modal-description">Description...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="backbrewner_js/script.js"></script>
+  <script src="backbrewner_js/scroll-effects.js"></script>
+  <script src="script.js"></script>
+  <script src="backbrewner_js/menu-modal.js"></script>
+
+</body>
+</html>

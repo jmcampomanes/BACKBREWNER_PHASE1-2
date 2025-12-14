@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Foods — Backbrewner Café</title>
+
+  <link rel="stylesheet" href="backbrewner_css/style.css">
+  <link rel="stylesheet" href="backbrewner_css/animations.css">
+  <link rel="stylesheet" href="backbrewner_css/menuPage.css">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Backbrewner Café Logo" class="logo-img">
+        <span class="logo-text">Backbrewner Café</span>  
+      </a>
+      <span class="menu-btn">☰</span>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="menu.html" class="active">Menu</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main style="padding-top:85px;">
+
+    <section id="menu-page">
+      <div class="menu-tabs">
+        <a href="menu.html" class="active">Menu</a>
+        <a href="featured.html">Featured</a>
+        <a href="previous.html">Previous</a>
+        <a href="favorites.html">Favorites</a>
+      </div>
+
+      <div class="menu-container">
+
+        <aside class="side-menu">
+
+          <div class="menu-category">
+            <a href="menu.html"><button class="dropdown-btn">Drinks ▾</button></a>
+            <div class="dropdown-list">
+              <a href="menu.html#hot-coffee">Hot Coffee</a>
+              <a href="menu.html#cold-coffee">Cold Coffee</a>
+              <a href="menu.html#hot-tea">Hot Tea</a>
+              <a href="menu.html#cold-tea">Cold Tea</a>
+              <a href="menu.html#fruit-tea">Fruit Tea</a>
+              <a href="menu.html#frappuccino">Frappuccino</a>
+              <a href="menu.html#bottled-beverages">Bottled Beverages</a>
+            </div>
+          </div>
+
+          <div class="menu-category">
+            <button class="dropdown-btn">Foods ▾</button>
+            <div class="dropdown-list">
+              <a href="#breakfast">Breakfast</a>
+              <a href="#lunch">Lunch</a>
+              <a href="#pastries">Pastries</a>
+              <a href="#dinner">Dinner</a>
+            </div>
+          </div>
+
+          <div class="menu-category">
+            <a href="productsPage.html"><button class="dropdown-btn">Products ▾</button></a>
+            <div class="dropdown-list">
+              <a href="productsPage.html#coffee-beans">Coffee Beans</a>
+              <a href="productsPage.html#bottled-drinks">Bottled Drinks</a>
+              <a href="productsPage.html#powdered-drinks">Powdered Drinks</a>
+            </div>
+          </div>
+
+        </aside>
+
+        <div class="menu-items">
+          <h2>Menu / <b>Foods</b></h2>
+
+          <div id="breakfast" class="menu-section">
+            <h3>Breakfast</h3>
+            <p>Sandwiches & Light Bites</p>
+            <div class="grid">
+              <a href="javascript:void(0);" onclick="openModal('tuna_melt')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/tuna_melt_sandwich.jpg"></div><p>Tuna Melt<br><span>Toasted</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('ham_cheese_panini')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/ham_cheese_panini.jpg"></div><p>Ham & Cheese<br><span>Panini</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('clubhouse_sandwich')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/clubhouse_sandwich.jpg"></div><p>Clubhouse<br><span>Classic</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('blt_sandwich')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/blt_sandwich.jpg"></div><p>BLT Sandwich<br><span>Bacon</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('grilled_chicken_sandwich')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/grilled_chicken_sandwich.jpg"></div><p>Grilled Chicken<br><span>Sandwich</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('crispy_chicken_sandwich')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/crispy_chicken_sandwich.jpg"></div><p>Crispy Chicken<br><span>Sandwich</span></p></div>
+              </a>
+            </div>
+          </div>
+
+          <br><hr><br>
+
+          <div id="lunch" class="menu-section">
+            <h3>Lunch</h3>
+            <p>Burgers, Salads & Favorites</p>
+            <div class="grid">
+              <a href="javascript:void(0);" onclick="openModal('classic_beef_burger')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/classic_beef_burger.jpg"></div><p>Classic Burger<br><span>Beef</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('cheese_burger_deluxe')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/cheese_burger_deluxe.jpg"></div><p>Cheese Deluxe<br><span>Burger</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('chicken_caesar_salad')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/chicken_caesar_salad.jpg"></div><p>Caesar Salad<br><span>Fresh</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('garden_salad')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/garden_fresh_salad.jpg"></div><p>Garden Salad<br><span>Healthy</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('beef_nachos')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/beef_nachos.jpg"></div><p>Beef Nachos<br><span>Shareable</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('cheesy_fries')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/cheesy_fries.jpg"></div><p>Cheesy Fries<br><span>Side</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('fried_chicken')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/fried_chicken.jpg"></div><p>Fried Chicken<br><span>Crispy</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('chicken_inasal')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/chicken_inasal.jpg"></div><p>Chicken Inasal<br><span>Grilled</span></p></div>
+              </a>
+            </div>
+          </div>
+
+          <br><hr><br>
+
+          <div id="pastries" class="menu-section">
+            <h3>Pastries</h3>
+            <p>Desserts & Sweets</p>
+            <div class="grid">
+              <a href="javascript:void(0);" onclick="openModal('choco_cookies')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/chocolate_chip_coockies.jpg"></div><p>Choco Cookies<br><span>Sweet</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('blueberry_muffin')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/blueberry_muffin.jpg"></div><p>Blueberry Muffin<br><span>Baked</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('banana_bread')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/banana_bread.jpg"></div><p>Banana Bread<br><span>Loaf</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('carrot_cake')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/carrot_cake.jpg"></div><p>Carrot Cake<br><span>Slice</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('red_velvet_cupcake')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/red_velvet_cupcake.jpg"></div><p>Red Velvet<br><span>Cupcake</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('cheesecake')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/cheesecake_slice.jpg"></div><p>Cheesecake<br><span>Creamy</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('lava_cake')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/chocolate_lava_cake.jpg"></div><p>Lava Cake<br><span>Warm</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('mango_float')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/mango_float.jpg"></div><p>Mango Float<br><span>Chilled</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('leche_flan')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/leche_flan.jpg"></div><p>Leche Flan<br><span>Classic</span></p></div>
+              </a>
+            </div>
+          </div>
+
+          <br><hr><br>
+
+          <div id="dinner" class="menu-section">
+            <h3>Dinner</h3>
+            <p>Hearty Beef & Chicken Meals</p>
+            <div class="grid">
+              <a href="javascript:void(0);" onclick="openModal('beef_steak')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/beef_steak.jpg"></div><p>Beef Steak<br><span>Hearty</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('grilled_steak')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/grilled_beef_steak.jpg"></div><p>Grilled Steak<br><span>Premium</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('beef_bulgogi')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/beef_bulgogi.jpg"></div><p>Beef Bulgogi<br><span>Korean</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('beef_kare_kare')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/beef_kare-kare.jpg"></div><p>Beef Kare-Kare<br><span>Peanut Sauce</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('beef_caldereta')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/beef_caldereta.jpg"></div><p>Beef Caldereta<br><span>Spicy</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('chicken_curry')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/chicken_curry.jpg"></div><p>Chicken Curry<br><span>Savory</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('chicken_adobo')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/chicken_adobo.jpg"></div><p>Chicken Adobo<br><span>Classic</span></p></div>
+              </a>
+              <a href="javascript:void(0);" onclick="openModal('chicken_tinola')" style="text-decoration: none; color: inherit; cursor: pointer;">
+                <div class="item"><div class="circle"><img src="images/chicken_tinola.jpg"></div><p>Chicken Tinola<br><span>Soup</span></p></div>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>© 2025 Backbrewner Café</footer>
+
+  <button id="toTop">↑</button>
+
+  <div id="productModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="modal-image-container">
+        <img id="modal-img" src="" alt="Product Image">
+      </div>
+      <div class="modal-text">
+        <h2 id="modal-name">Product Name</h2>
+        <p class="modal-meta">
+          <span id="modal-calories">0</span> Calories | ₱<span id="modal-price">0</span>
+        </p>
+        <div class="details-section">
+          <h4>Details</h4>
+          <p id="modal-description">Description...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="backbrewner_js/script.js"></script>
+  <script src="backbrewner_js/scroll-effects.js"></script>
+  <script src="script.js"></script>
+  <script src="backbrewner_js/menu-modal.js"></script>
+
+</body>
+</html>

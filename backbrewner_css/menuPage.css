@@ -1,0 +1,566 @@
+@font-face {
+    font-family: 'Bernoru';
+    src: url('fonts/Bernoru-BlackUltraExpandedTrial.otf') format('opentype');
+}
+
+/* ===============================
+   MENU PAGE TABS
+================================ */
+.menu-tabs {
+  display: flex;
+  gap: 30px;
+  border-bottom: 2px solid #b7904d;
+  margin-bottom: 15px;
+}
+.menu-tabs a {
+  text-decoration: none;
+  color: #3e2a1b;
+  padding-bottom: 10px;
+  transition: 0.3s;
+  font-weight: 600;
+}
+.menu-tabs a:hover,
+.menu-tabs a.active {
+  border-bottom: 3px solid #b7904d;
+  color: #b7904d;
+}
+
+/* ===============================
+   LAYOUT
+================================ */
+.menu-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px; 
+  flex-wrap: wrap;
+}
+
+/* ===============================
+   SIDEBAR
+================================ */
+.side-menu {
+  position: sticky;
+  top: 100px;
+  align-self: flex-start;
+  padding: 5px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Sidebar dropdown */
+.menu-category {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.dropdown-btn {
+  background-color: #4B2E05; 
+  color: #F5E6CA;            
+  width: 100%;
+  text-align: left;
+  border: 2px solid #4B2E05;
+  padding: 12px 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 17px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.dropdown-btn:hover {
+  background-color: #6d4c21; 
+  transform: translateX(3px) scale(1.02);
+  box-shadow: 0 5px 15px rgba(75, 46, 5, 0.4);
+}
+
+.dropdown-btn * {
+  color: inherit;
+}
+
+.dropdown-list {
+  display: none;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid #e5dac8;
+  border-radius: 10px;
+  margin-top: 6px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  animation: dropdownFade 0.3s ease forwards;
+}
+
+@keyframes dropdownFade {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown-list a {
+  color: #3e2a1b;
+  text-decoration: none;
+  padding: 12px 18px;
+  font-size: 15px;
+  transition: all 0.25s ease;
+  border-top: 1px solid #f0e5d3;
+}
+.dropdown-list a:first-child { border-top: none; }
+.dropdown-list a:hover {
+  background-color: #b7904d;
+  color: #fff;
+  padding-left: 24px;
+  box-shadow: 0 4px 10px rgba(183,144,77,0.4);
+}
+
+.menu-category:hover .dropdown-list { display: flex; }
+
+/* ===============================
+   RIGHT SIDE MENU ITEMS
+================================ */
+.menu-items {
+  flex: 1;
+  border-left: 2px solid #d1b885;
+  padding: 20px; 
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.menu-items h2 {
+  font-size: 1.3rem;
+  color: #7a5b40;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.menu-items h3 {
+  margin-top: 25px;
+  color: #3e2a1b;
+  font-weight: 600;
+  position: relative;
+}
+.menu-items h3::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #b7904d;
+  margin-top: 6px;
+  border-radius: 2px;
+}
+
+/* ===============================
+   GRID LAYOUT FOR ITEMS (UPDATED)
+================================ */
+.grid {
+  display: grid;
+  /* CHANGED: Forces 4 items per row */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px; 
+  margin-top: 20px;
+}
+
+.item {
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 15px;
+  padding: 15px; /* Increased padding */
+}
+.item:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 8px 25px rgba(183,144,77,0.35);
+  background: rgba(232,184,109,0.1);
+  border-radius: 15px;
+}
+
+/* CHANGED: Make images bigger */
+.circle {
+  width: 145px;  /* Increased from 100px */
+  height: 145px; /* Increased from 100px */
+  border: 2px solid #3e2a1b;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 15px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.item:hover .circle img {
+  transform: scale(1.1);
+}
+
+.item p {
+  margin: 0;
+  /* CHANGED: Larger font size */
+  font-size: 1.1rem; 
+  font-weight: 600;
+  color: #3e2a1b;
+  line-height: 1.3;
+}
+.item span {
+  /* CHANGED: Larger sub-text */
+  font-size: 0.95rem; 
+  color: #7a5b40;
+}
+
+/* ===============================
+   MENU SECTIONS & DIVIDERS
+================================ */
+.menu-section {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(122, 115, 95, 0.25);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+.menu-section.hidden {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+}
+
+hr {
+  margin: 15px 0; 
+  border: 0;
+  border-top: 1px solid #d1b885;
+}
+
+/* ===============================
+   MODAL
+================================ */
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7); 
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #4a3c31; 
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 750px;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  text-align: center; 
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+  position: relative;
+  flex-direction: column; 
+  color: #fff; 
+  animation: pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+
+@keyframes pop {
+  from { transform: scale(0.8) translateY(50px); opacity: 0; }
+  to { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.modal-image-container {
+  flex-shrink: 0;
+  border: 5px solid #fff; 
+  border-radius: 50%; 
+  padding: 8px; 
+  background-color: #fff;
+  width: 220px; 
+  height: 220px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.modal-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%; 
+}
+
+.modal-text {
+  flex: 1;
+  color: #fff;
+}
+
+.modal-content h2 {
+  margin: 0 0 10px;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.modal-meta {
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+  font-weight: 600;
+  color: #e0c097; 
+}
+
+.details-section h4 {
+  margin: 0 0 10px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.details-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e0c097;
+}
+
+.modal-content .close {
+  position: absolute;
+  right: 25px;
+  top: 20px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  line-height: 1;
+}
+
+.modal-content .close:hover {
+  color: #e0c097;
+  transform: rotate(90deg);
+}
+
+/* ===============================
+   FEATURED IMAGE CIRCLES
+================================ */
+.featured-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  display: block;
+  border: 3px solid #3e2a1b;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+/* Tablet: Switch to 3 columns if 4 is too cramped */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile: Switch to 2 columns */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  .circle {
+    width: 110px;
+    height: 110px;
+  }
+  .item p {
+    font-size: 1rem;
+  }
+}
+
+/* ===============================
+   FIXES FOR SPACING
+================================ */
+#menu-page {
+  padding-top: 10px !important; 
+  padding-left: 20px !important; 
+  padding-right: 20px !important;
+  padding-bottom: 40px !important;
+}
+
+/* -------------------------
+   VERY SMALL PHONES
+-------------------------- */
+@media (max-width: 360px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ===============================
+   MODAL
+================================ */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7); /* Slightly darker background */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #4a3c31; /* Dark brown background like the image */
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 750px;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  text-align: center; /* Center text as in the image */
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+  position: relative;
+  flex-direction: column; /* Stack image and text */
+  color: #fff; /* White text color */
+  animation: pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy pop animation */
+}
+
+@keyframes pop {
+  from { transform: scale(0.8) translateY(50px); opacity: 0; }
+  to { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+/* Container for the circular image */
+.modal-image-container {
+  flex-shrink: 0;
+  border: 5px solid #fff; /* White border */
+  border-radius: 50%; /* Make it a circle */
+  padding: 8px; /* Space between image and border */
+  background-color: #fff;
+  width: 220px; /* Fixed width */
+  height: 220px; /* Fixed height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.modal-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%; /* Ensure image itself is also circular */
+}
+
+.modal-text {
+  flex: 1;
+  color: #fff;
+}
+
+.modal-content h2 {
+  margin: 0 0 10px;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.modal-meta {
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+  font-weight: 600;
+  color: #e0c097; /* Gold/light brown color for price/calories */
+}
+
+.details-section h4 {
+  margin: 0 0 10px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.details-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e0c097;
+}
+
+/* Close button styling */
+.modal-content .close {
+  position: absolute;
+  right: 25px;
+  top: 20px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  line-height: 1;
+}
+
+.modal-content .close:hover {
+  color: #e0c097;
+  transform: rotate(90deg);
+}
+
+/* ===============================
+   STYLES FOR PREVIOUS/DISCONTINUED ITEMS
+================================ */
+/* Makes the image slightly grey and faded by default */
+.previous-item .circle img {
+  filter: grayscale(60%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+/* On hover, bring back full color and opacity */
+.item.previous-item:hover .circle img {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* ================================
+   LOGO TEXT STYLES
+================================ */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Space between the circle logo and the text */
+  text-decoration: none;
+}
+
+.logo-text {
+  color: #F5E6CA; /* Cream color to match your theme */
+  font-family: 'Playfair Display', serif; /* Matches your main headers */
+  font-size: 1.5rem; /* Adjust size as needed */
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  white-space: nowrap; /* Prevents text from breaking into two lines */
+}
+
+/* Optional: Hide text on very small mobile screens if it gets too crowded */
+@media (max-width: 400px) {
+  .logo-text {
+    display: none;
+  }
+}

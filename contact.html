@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Contact — Backbrewner Café</title>
+  
+  <link rel="stylesheet" href="backbrewner_css/style.css">
+  <link rel="stylesheet" href="backbrewner_css/animations.css">
+  
+  <link rel="stylesheet" href="backbrewner_css/contact.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Backbrewner Café Logo" class="logo-img">
+        <span class="logo-text">Backbrewner Café</span>
+      </a>
+      <span class="menu-btn">☰</span>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main style="padding-top:120px;">
+    <section class="fade-in">
+      <h1>Contact Us</h1>
+      <p>We'd love to hear from you — questions, feedback, or just a hello.</p>
+      <div class="scroll-down-arrow-contact">↓</div>
+    </section>
+
+    <section class="slide-up">
+      <div class="contact-form fade-in">
+        <form id="contactForm">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required>
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div class="popup-overlay" id="successPopup">
+    <div class="popup-content">
+      <div class="popup-icon">✓</div>
+      <h2>Message Sent!</h2>
+      <p>Thank you for reaching out. We'll brew up a reply and get back to you shortly!</p>
+      <button class="close-btn" id="closePopupBtn">Close</button>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Backbrewner Café
+  </footer>
+
+  <button id="toTop">↑</button>
+
+  <script src="backbrewner_js/script.js"></script>
+  <script src="backbrewner_js/scroll-effects.js"></script>
+  
+  <script src="backbrewner_js/contact.js"></script>
+</body>
+</html>

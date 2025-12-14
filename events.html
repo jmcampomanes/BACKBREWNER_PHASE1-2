@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Events — Backbrewner Café</title>
+  <link rel="stylesheet" href="backbrewner_css/style.css">
+  <link rel="stylesheet" href="backbrewner_css/animations.css">
+  <link rel="stylesheet" href="backbrewner_css/event.css"> 
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+    <a href="index.html" class="logo">
+      <img src="images/logo.png" alt="Backbrewner Café Logo" class="logo-img">
+        <span class="logo-text">Backbrewner Café</span>      
+    </a>
+    <span class="menu-btn">☰</span>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  </header>
+
+  <main style="padding-top:120px;">
+    <section class="fade-in">
+      <h1>Events & Promotions</h1>
+      <p>Stay updated on our digital gatherings, playlist drops, and seasonal promos.</p>
+      <div class="scroll-down-arrow-contact">↓</div>
+    </section>
+
+    <section class="slide-up">
+      <div class="menu-grid">
+        <article class="menu-card fade-in" data-event-id="playlist-drop" onclick="openLightbox('playlist-drop')">
+          <h3>🎵 Backbrewner Playlist Drop</h3>
+          <p>Date: December 15 — A curated playlist inspired by our cafe mood.</p>
+        </article>
+
+        <article class="menu-card fade-in" data-event-id="holiday-sale" onclick="openLightbox('holiday-sale')">
+          <h3>☕ Holiday Brew Sale</h3>
+          <p>December 20–30 — Selected drinks at 20% off. Perfect for gifting.</p>
+        </article>
+
+        <article class="menu-card fade-in" data-event-id="poetry-night" onclick="openLightbox('poetry-night')">
+          <h3>📝 Coffee & Poetry Night (Virtual)</h3>
+          <p>Monthly open-mic stream. Share your lines and sip along.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Backbrewner Café
+  </footer>
+
+  <button id="toTop">↑</button>
+
+  <div id="eventLightbox" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeLightbox()">&times;</span>
+      
+      <div class="modal-text">
+        <h2 id="lightboxTitle">Event Title</h2>
+        <p class="modal-meta">
+          <span id="lightboxDate">Date Range / Time</span>
+        </p>
+        <div class="details-section">
+          <h4>Details</h4>
+          <p id="lightboxDescription">Detailed information about the event goes here.</p>
+        </div>
+        <p id="lightboxCTA" class="modal-meta"></p>
+      </div>
+    </div>
+  </div>
+
+<script src="backbrewner_js/event-lightbox.js"></script> 
+</body>
+</html>

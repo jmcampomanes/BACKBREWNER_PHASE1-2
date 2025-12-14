@@ -1,0 +1,376 @@
+/* ================================
+   GLOBAL BASE STYLES
+================================ */
+.logo-img {
+  width: 50px;     
+  height: 50px;
+  border-radius: 50%; 
+  object-fit: cover;   
+  border: 1px solid #e8b86d; 
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #F5E6CA;
+  color: #4B2E05;
+  overflow-x: hidden;
+}
+
+html, body {
+  overflow-x: hidden !important;
+}
+
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+}
+
+section {
+  padding: 80px 10%;
+  position: relative;
+}
+
+/* ================================
+   NAVBAR (GLASS EFFECT + MODERN)
+================================ */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(12px);
+  background: rgba(75, 46, 5, 0.85);
+  z-index: 9999;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  transition: 0.3s;
+}
+
+.navbar:hover {
+  background: rgba(75, 46, 5, 0.95);
+}
+
+.navbar .logo {
+  color: #F5E6CA;
+  font-size: 26px;
+  font-weight: bold;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #F5E6CA;
+  font-weight: bold;
+  padding: 5px 8px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #fff;
+  background: rgba(232,184,109,0.2);
+  box-shadow: 0 0 8px rgba(232,184,109,0.6);
+}
+
+/* Mobile Menu */
+.menu-btn {
+  display: none;
+  font-size: 32px;
+  color: #F5E6CA;
+  cursor: pointer;
+}
+
+/* ================================
+   MOBILE MINI POPUP MENU (CENTERED)
+================================ */
+
+@media(max-width: 1024px) {
+  .menu-btn {
+    display: block;
+    cursor: pointer;
+  }
+
+  .nav-links {
+    /* 1. Position it like a dropdown card */
+    position: absolute;
+    top: 100%;       
+    right: 25px;     
+    width: 200px;    /* Slightly narrower for a cleaner look */
+    height: auto;    
+    margin-top: 15px;
+    
+    /* 2. Card Appearance */
+    background: #2b1b05; 
+    padding: 15px;
+    border-radius: 12px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
+    border: 1px solid rgba(232, 184, 109, 0.2); 
+    
+    /* 3. CENTER LAYOUT CHANGES */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;        
+    align-items: center; /* Centers the items horizontally */
+    text-align: center;  /* Ensures text inside is centered */
+    
+    /* 4. Animation Setup */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px) scale(0.95);
+    transform-origin: top right;
+    transition: all 0.3s ease;
+  }
+
+  /* Visible State */
+  .nav-links.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+  }
+
+  /* Link Styling */
+  .nav-links a {
+    display: block;
+    width: 100%;      /* fill the container width */
+    font-size: 16px; 
+    padding: 10px 0;  /* Remove side padding to keep perfect center */
+    border-radius: 8px;
+    box-sizing: border-box;
+    text-align: center; /* Force text to center */
+    transition: 0.2s;
+  }
+
+  /* Hover Effect - Changed to Scale/Zoom */
+  .nav-links a:hover {
+    background: rgba(232, 184, 109, 0.15); 
+    transform: scale(1.05); /* Zooms slightly instead of sliding */
+    color: #E8B86D;
+  }
+}
+
+/* ================================
+   HERO CINEMATIC
+================================ */
+
+.hero {
+  height: 100vh;
+  /* I changed the opacity values: 
+     0.45 -> 0.65 (darker start)
+     0.75 -> 0.90 (darker bottom) */
+  background: linear-gradient(
+      rgba(0,0,0,0.65),
+      rgba(0,0,0,0.90)
+    ),
+    url('/backbrewner_cafe/images/background.png') center/cover fixed;
+  
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 10%;
+  flex-direction: column;
+}
+
+.hero h1 {
+  font-size: 64px;
+  /* Changed to a harder, darker shadow using #000 instead of rgba */
+  text-shadow: 4px 4px 8px #000000; 
+  font-weight: 700; /* Made the font bolder */
+  animation: fadeUp 1.5s ease forwards;
+}
+
+.hero p {
+  font-size: 22px;
+  margin-bottom: 30px;
+  /* Stronger shadow for the paragraph too */
+  text-shadow: 2px 2px 6px #000000; 
+  font-weight: 500; /* Slightly thicker text */
+  animation: fadeUp 1.8s ease forwards;
+}
+
+/* You will need to wrap your H1 and P inside a <div class="hero-box"> in your HTML */
+.hero-box {
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  backdrop-filter: blur(5px);      /* Blurs the image behind the box */
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(232, 184, 109, 0.3); /* Subtle gold border */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  max-width: 800px;
+}
+
+@keyframes fadeUp {
+  0% {opacity: 0; transform: translateY(30px);}
+  100% {opacity: 1; transform: translateY(0);}
+}
+
+/* ================================
+   BUTTON – GLOW EFFECT + GRADIENT
+================================ */
+
+.btn-glow {
+  padding: 16px 35px;
+  background: linear-gradient(45deg, #E8B86D, #F3D28A);
+  color: #4B2E05;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.3s;
+  box-shadow: 0 0 20px rgba(232,184,109,0.6);
+}
+
+.btn-glow:hover {
+  box-shadow: 0 0 30px rgba(232,184,109,1);
+  transform: scale(1.08);
+  background: linear-gradient(45deg, #F3D28A, #E8B86D);
+}
+
+
+/* ================================
+   SECTION TITLES
+================================ */
+
+section h2 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 25px;
+  position: relative;
+  display: inline-block;
+  color: #4B2E05;
+}
+
+section h2::after {
+  content: '';
+  width: 60px;
+  height: 3px;
+  background: #E8B86D;
+  display: block;
+  margin: 8px auto 0 auto;
+  border-radius: 2px;
+}
+
+/* ================================
+   MENU CARDS
+================================ */
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.menu-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 18px 30px rgba(0,0,0,0.18);
+  transition: 0.4s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.28);
+}
+
+.menu-card img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+/* ================================
+   GALLERY GRID
+================================ */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 20px;
+  transition: 0.3s ease;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.06);
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  background: linear-gradient(135deg, #4B2E05, #7A5230);
+  color: #F5E6CA;
+  padding: 25px;
+  text-align: center;
+  margin-top: 60px;
+  font-size: 16px;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+}
+
+/* ================================
+   BACK TO TOP BUTTON
+================================ */
+
+#toTop {
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  background: linear-gradient(45deg, #E8B86D,   #F3D28A);
+  border: none;
+  padding: 14px 20px;
+  font-size: 22px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+#toTop:hover {
+  background: linear-gradient(45deg, #F3D28A, #E8B86D);
+  transform: scale(1.1);
+}
+
+/* ================================
+   LOGO TEXT STYLES
+================================ */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Space between the circle logo and the text */
+  text-decoration: none;
+}
+
+.logo-text {
+  color: #F5E6CA; /* Cream color to match your theme */
+  font-family: 'Playfair Display', serif; /* Matches your main headers */
+  font-size: 1.5rem; /* Adjust size as needed */
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  white-space: nowrap; /* Prevents text from breaking into two lines */
+}
+
+/* Optional: Hide text on very small mobile screens if it gets too crowded */
+@media (max-width: 400px) {
+  .logo-text {
+    display: none;
+  }
+}

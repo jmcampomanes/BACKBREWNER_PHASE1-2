@@ -1,0 +1,116 @@
+/* Import custom font */
+@font-face {
+    font-family: 'Bernoru';
+    src: url('../fonts/Bernoru-BlackUltraExpandedTrial.otf') format('opentype');
+}
+
+/* Main layout adjustments */
+main {
+  padding-top: 80px;
+  min-height: calc(100vh - 140px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Back Navigation Bar */
+.back-nav {
+  background-color: #f8f5e8;
+  padding: 20px 10%;
+  border-bottom: 1px solid #e7d9c0;
+}
+
+.back-link {
+  text-decoration: none;
+  color: #3e2a1b;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: 'Bernoru', sans-serif;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.back-link .arrow {
+  margin-right: 15px;
+  font-weight: bold;
+}
+
+.back-link:hover {
+  color: #b7904d;
+}
+
+/* Product Banner Section */
+.product-banner {
+  background-color: #4a3a2a;
+  color: #ffffff;
+  padding: 60px 10%;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.product-content-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Product Image */
+.product-image-container {
+  flex-shrink: 0;
+}
+
+.product-image-container img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 8px solid rgba(255, 255, 255, 0.1);
+  background-color: #fff;
+}
+
+/* Product Text Info */
+.product-info {
+  font-family: sans-serif;
+}
+
+.product-info h1 {
+  font-family: 'Bernoru', sans-serif;
+  font-size: 3rem;
+  margin: 0 0 10px 0;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+.calories {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #e0e0e0;
+  margin-bottom: 30px;
+}
+
+.details-section h2 {
+  font-family: 'Bernoru', sans-serif;
+  font-size: 1.5rem;
+  margin: 0 0 15px 0;
+  color: #ffffff;
+}
+
+.details-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #d0d0d0;
+  max-width: 600px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .product-content-wrapper {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+}

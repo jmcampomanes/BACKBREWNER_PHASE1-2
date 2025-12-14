@@ -1,0 +1,64 @@
+/* ================================
+   FADE-IN ANIMATION
+================================ */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================================
+   STAGGERED ELEMENT ANIMATION
+================================ */
+
+.staggered {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: staggerFadeUp 0.8s forwards;
+}
+
+@keyframes staggerFadeUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ================================
+   BUTTON POP-UP
+================================ */
+
+.btn-glow {
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.btn-glow::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: -5px;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  background: rgba(232,184,109,0.25);
+  border-radius: 50px;
+  filter: blur(12px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.btn-glow:hover::before {
+  opacity: 1;
+  transform: scale(1.05);
+}

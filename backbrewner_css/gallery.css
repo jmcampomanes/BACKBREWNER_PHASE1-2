@@ -1,0 +1,203 @@
+/* ================================
+   GALLERY PAGE STYLES
+================================ */
+
+/* 1. BACKGROUND SETTINGS */
+body {
+  /* Dark overlay + Fixed Image */
+  /* Path changed to ../images because this file is in the css folder */
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+              url('../images/gallery-bg.jpg') center/cover no-repeat fixed;
+}
+
+/* MAIN HEADERS */
+main h1 {
+  font-family: 'Playfair Display', serif;
+  color: #FFFFFF; /* White to pop against dark background */
+  text-align: center;
+  font-size: 48px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+  position: relative;
+}
+
+main h1::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #E8B86D, #F3D28A);
+  margin: 12px auto 0 auto;
+  border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+main p {
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 50px;
+  color: #F5E6CA; /* Light Cream for readability */
+  font-weight: 500;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+
+/* GALLERY GRID */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding-bottom: 40px;
+}
+
+.gallery-item {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.4); 
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  /* Add a thin border so images don't blend into the dark bg */
+  border: 2px solid rgba(255, 255, 255, 0.15); 
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.6);
+  border-color: #E8B86D; /* Border turns gold on hover */
+}
+
+/* LIGHTBOX */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  /* Darker backdrop */
+  background: rgba(0,0,0,0.9); 
+  
+  /* FIXED: increased Z-Index to be higher than Navbar (which is 9999) */
+  z-index: 10001; 
+  
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  backdrop-filter: blur(5px);
+}
+
+.lightbox.active {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 15px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+  border: 2px solid #E8B86D;
+}
+
+.lightbox.active img {
+  transform: scale(1);
+}
+
+.lightbox-close {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  background: rgba(0,0,0,0.5);
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  
+  /* FIXED: Ensure button is clickable above image */
+  z-index: 10002;
+}
+
+.lightbox-close:hover {
+  color: #E8B86D;
+  background: rgba(255,255,255,0.1);
+}
+
+/* FADE-IN ANIMATION FOR ITEMS */
+.fade-in {
+  opacity: 0;
+  transform: translateY(25px);
+  animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(25px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+
+/* RESPONSIVE ADJUSTMENTS */
+@media(max-width: 768px) {
+  main h1 {
+    font-size: 36px;
+  }
+
+  main p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    padding: 0 15px;
+  }
+
+  .gallery-item {
+    border-radius: 15px;
+  }
+}
+
+/* SCROLL DOWN ARROW */
+.scroll-down-arrow-contact {
+  display: block;
+  margin: 20px auto 0 auto; 
+  font-size: 36px;
+  color: #E8B86D;
+  opacity: 0.9;
+  animation: bounceContact 2s infinite;
+  cursor: pointer;
+  text-align: center;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+@keyframes bounceContact {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(12px); }
+  60% { transform: translateY(6px); }
+}
+
+/* ================================
+   LOGO TEXT STYLES
+================================ */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Space between the circle logo and the text */
+  text-decoration: none;
+}
+
+.logo-text {
+  color: #F5E6CA; /* Cream color to match your theme */
+  font-family: 'Playfair Display', serif; /* Matches your main headers */
+  font-size: 1.5rem; /* Adjust size as needed */
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  white-space: nowrap; /* Prevents text from breaking into two lines */
+}
+
+/* Optional: Hide text on very small mobile screens if it gets too crowded */
+@media (max-width: 400px) {
+  .logo-text {
+    display: none;
+  }
+}

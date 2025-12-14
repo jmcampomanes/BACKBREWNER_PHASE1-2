@@ -1,0 +1,126 @@
+/* ================================
+   FEATURED PAGE STYLES
+================================ */
+
+/* Title */
+.featured-title {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  color: #4B2E05;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.featured-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: #E8B86D;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Grid */
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  padding: 0 20px;
+}
+
+/* Cards */
+.featured-card {
+  background: rgba(122, 115, 95, 0.25);
+  border-radius: 25px;
+  text-align: center;
+  padding: 20px;
+  transition: 0.4s;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  cursor: pointer;
+}
+
+.featured-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #3e2a1b;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.featured-card h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #3e2a1b;
+}
+
+.featured-card p {
+  font-size: 0.95rem;
+  color: #7a5b40;
+}
+
+/* Hover Effect */
+.featured-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 35px rgba(0,0,0,0.25);
+}
+
+.featured-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+  0% {opacity: 0; transform: translateY(20px);}
+  100% {opacity: 1; transform: translateY(0);}
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  .featured-grid {
+    gap: 30px;
+  }
+  .featured-card img {
+    width: 120px;
+    height: 120px;
+  }
+  .featured-title {
+    font-size: 32px;
+  }
+}
+
+/* ================================
+   LOGO TEXT STYLES
+================================ */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Space between the circle logo and the text */
+  text-decoration: none;
+}
+
+.logo-text {
+  color: #F5E6CA; /* Cream color to match your theme */
+  font-family: 'Playfair Display', serif; /* Matches your main headers */
+  font-size: 1.5rem; /* Adjust size as needed */
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  white-space: nowrap; /* Prevents text from breaking into two lines */
+}
+
+/* Optional: Hide text on very small mobile screens if it gets too crowded */
+@media (max-width: 400px) {
+  .logo-text {
+    display: none;
+  }
+}
