@@ -3,58 +3,124 @@
 <head>
   <meta charset="utf-8">
   <title>About — Backbrewner Café</title>
-  
+
+  <!-- MAIN STYLES -->
   <link rel="stylesheet" href="backbrewner_css/style.css">
   <link rel="stylesheet" href="backbrewner_css/animations.css">
-  
   <link rel="stylesheet" href="backbrewner_css/about.css">
 </head>
 <body>
+
+  <!-- HEADER / NAVBAR -->
   <header>
     <nav class="navbar">
       <a href="index.html" class="logo">
         <img src="images/logo.png" alt="Backbrewner Café Logo" class="logo-img">
-        <span class="logo-text">Backbrewner Café</span>      
+        <span class="logo-text">Backbrewner Café</span>
       </a>
+
       <span class="menu-btn">☰</span>
+
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="about.html" class="active">About</a></li>
         <li><a href="menu.html">Menu</a></li>
-        <li><a href="events.html">Events</a></li> 
+        <li><a href="events.html">Events</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <main style="padding-top:120px;">
-    <section class="fade-in">
-      <h1>About Backbrewner Café</h1>
-      <p>Backbrewner Café is a cozy online sanctuary inspired by music, nostalgia, and handcrafted coffee. Built to be a warm digital space, our brand blends the emotional atmosphere of song and quiet reflection with a curated menu of comforting drinks and pastries.</p>
-    </section>
+  <!-- MAIN CONTENT -->
+  <main style="padding-top:120px;" class="about-cards">
 
-    <section class="slide-up">
-      <h2>Mission</h2>
-      <p>To provide a digital space where comfort, creativity, and connection blend together.</p>
+<div class="card-grid">
 
-      <h2>Vision</h2>
-      <p>To be a leading online café brand that inspires connection, creativity, and belonging through design and storytelling.</p>
-    </section>
+  <!-- ROW 1 -->
+  <div class="flip-card">
+    <div class="flip-inner">
+      <div class="flip-front">
+        <h2>About Us</h2>
+      </div>
+      <div class="flip-back">
+        <h3>About Us</h3>
+        <p>
+          Backbrewner Café is a cozy online sanctuary inspired by music,
+          nostalgia, and handcrafted coffee — a warm digital space for
+          comfort and creativity.
+        </p>
+      </div>
+    </div>
+  </div>
 
-    <section class="fade-in">
-      <h2>Inspiration</h2>
-      <p>Inspired by the mood of NIKI’s “Backburner,” our aesthetic focuses on melancholic warmth, soft lighting, and music-driven emotion. We design each experience to feel like a quiet corner in a small café where thoughts become cozy and ideas flow.</p>
-    </section>
+  <div class="flip-card">
+    <div class="flip-inner">
+      <div class="flip-front">
+        <h2>Inspiration</h2>
+      </div>
+      <div class="flip-back">
+        <h3>Inspiration</h3>
+        <p>
+          Inspired by NIKI’s “Backburner,” our aesthetic focuses on
+          melancholic warmth, quiet reflection, and music-driven emotion.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROW 2 -->
+  <div class="flip-card">
+    <div class="flip-inner">
+      <div class="flip-front">
+        <h2>Vision</h2>
+      </div>
+      <div class="flip-back">
+        <h3>Vision</h3>
+        <p>
+          To be a leading online café brand that inspires connection,
+          creativity, and belonging through design and storytelling.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card">
+    <div class="flip-inner">
+      <div class="flip-front">
+        <h2>Mission</h2>
+      </div>
+      <div class="flip-back">
+        <h3>Mission</h3>
+        <p>
+          To provide a digital space where comfort, creativity,
+          and meaningful connection blend together.
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
   </main>
 
-  <footer>
-    © 2025 Backbrewner Café
-  </footer>
+  <link rel="stylesheet" href="backbrewner_css/footer.css">
+  <script src="backbrewner_js/footer-loader.js"></script>
 
+  <!-- BACK TO TOP -->
   <button id="toTop">↑</button>
 
+  <!-- SCRIPTS -->
   <script src="backbrewner_js/script.js"></script>
   <script src="backbrewner_js/scroll-effects.js"></script>
+
+  <!-- FLIP CARD SCRIPT -->
+  <script>
+    document.querySelectorAll('.flip-card').forEach(card => {
+      card.addEventListener('click', () => {
+        card.classList.toggle('active');
+      });
+    });
+  </script>
+
 </body>
 </html>

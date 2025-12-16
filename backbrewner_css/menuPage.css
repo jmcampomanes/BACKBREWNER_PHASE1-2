@@ -13,7 +13,7 @@
 .menu-tabs {
   /* 1. FORCE IT TO STAY PUT */
   position: fixed; 
-  top: 85px; /* Sits exactly below your main Header */
+  top: 80px; /* Sits exactly below your main Header */
   left: 0;
   width: 100%; /* Spans the full width of the screen */
   
@@ -169,7 +169,7 @@
   /* Layout: Always display flex, but hide visually using height */
   display: flex;
   flex-direction: column;
-  background-color: #fff;
+  background-color: #F5E6CA;
   border-radius: 10px;
   overflow: hidden; /* Important: Hides content when closed */
   
@@ -528,27 +528,119 @@ hr {
 }
 
 /* ===============================
-   RESPONSIVE
+   GLOBAL COLORS (Matches your Screenshot)
 ================================ */
-/* Tablet: Switch to 3 columns if 4 is too cramped */
-@media (max-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+/* Ensure the dropdown is ALWAYS cream, on mobile and desktop */
+.dropdown-list {
+  background-color: #F5E6CA !important; /* Cream color */
+  border: 1px solid #e5dac8;
 }
 
-/* Mobile: Switch to 2 columns */
-@media (max-width: 600px) {
+/* ===============================
+   TABLET & MOBILE RESPONSIVENESS (CLEAN FIX)
+================================ */
+
+/* Applies to Tablets and Phones (1023px and below) */
+@media (max-width: 1023px) {
+
+  /* 1. LAYOUT: Stack Sidebar on top of Content */
+  .menu-container {
+    display: flex !important;
+    flex-direction: column !important; 
+    
+    /* PUSH CONTENT DOWN: 
+       Header (85px) + Tabs (60px) + Gap = ~170px 
+       If it's still hidden, increase this number (e.g., 200px) */
+    margin-top: 60px !important; 
+    
+    width: 100% !important;
+  }
+
+  /* 2. SIDEBAR: FORCE RESET TO RELATIVE
+     This is crucial! It stops the desktop 'fixed' behavior 
+     so the buttons flow naturally with the margin above. */
+/* 2. SIDEBAR CONTAINER (Mobile) */
+  .side-menu {
+    position: relative !important; 
+    top: 0 !important;
+    left: 0 !important;
+    
+    /* WIDTH FIX: Use 100% width but subtract padding correctly */
+    width: 100% !important;
+    box-sizing: border-box !important; /* Critical: Keeps padding inside the width */
+    
+    /* SIDE MARGINS: This controls the gap on Left/Right of the buttons */
+    padding: 0 25px !important; 
+    
+    height: auto !important;
+    overflow: visible !important;
+    margin-bottom: 20px !important;
+    z-index: 10;
+  }
+
+  /* 3. BUTTON STYLING (Mobile) */
+  .dropdown-btn {
+    width: 100% !important; /* Fills the padded container */
+    box-sizing: border-box !important; /* Prevents button from growing too wide */
+    margin-bottom: 15px; /* Adds gap between the stacked buttons */
+  }
+
+  /* 3. CONTENT AREA: Reset Width */
+  .menu-items {
+    margin-left: 0 !important; 
+    border-left: none !important; 
+    padding-left: 0 !important;
+    width: 100% !important;
+    padding-top: 0 !important;
+  }
+  
+  /* 4. TABS: Keep Fixed at Top */
+  .menu-tabs {
+    position: fixed !important;
+    top: 80px !important; 
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 40;
+    background: #F5E6CA;
+    padding: 10px 20px;
+    gap: 20px;
+  }
+
+  /* 5. FOOD GRID: 2 Columns */
   .grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr) !important;
     gap: 15px;
   }
+  
   .circle {
     width: 110px;
     height: 110px;
   }
-  .item p {
-    font-size: 1rem;
+}
+
+/* ===============================
+   VERY SMALL PHONES (iPhone SE, etc)
+================================ */
+@media (max-width: 400px) {
+  .grid {
+    gap: 10px;
+  }
+  .menu-tabs a {
+    font-size: 14px; 
+  }
+  /* Optional: Push down further if header wraps on small screens */
+  .menu-container {
+    margin-top: 180px !important;
+  }
+}
+
+/* 3. VERY SMALL PHONES */
+@media (max-width: 400px) {
+  .grid {
+    gap: 10px;
+  }
+  .menu-tabs a {
+    font-size: 14px; /* Smaller text for tabs */
   }
 }
 
