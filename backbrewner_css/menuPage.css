@@ -46,7 +46,7 @@
   width: 200px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 15px;  
 }
 
 /* Sidebar dropdown */
@@ -82,21 +82,28 @@
   color: inherit;
 }
 
+/* ===============================
+   ANIMATED DROPDOWN LIST (UPDATED)
+================================ */
 .dropdown-list {
-  display: none;
+  /* Layout: Always display flex, but hide visually using height */
+  display: flex;
   flex-direction: column;
   background-color: #fff;
-  border: 1px solid #e5dac8;
   border-radius: 10px;
-  margin-top: 6px;
-  box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-  overflow: hidden;
-  animation: dropdownFade 0.3s ease forwards;
-}
+  overflow: hidden; /* Important: Hides content when closed */
+  
+  /* HIDDEN STATE */
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+  transform: translateY(-10px);
+  border: 0px solid transparent;
+  box-shadow: none;
 
-@keyframes dropdownFade {
-  from { opacity: 0; transform: translateY(-5px); }
-  to { opacity: 1; transform: translateY(0); }
+  /* ANIMATION SETTINGS */
+  /* Smoothly transitions height, opacity, and position */
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .dropdown-list a {
@@ -108,14 +115,24 @@
   border-top: 1px solid #f0e5d3;
 }
 .dropdown-list a:first-child { border-top: none; }
+
 .dropdown-list a:hover {
   background-color: #b7904d;
   color: #fff;
   padding-left: 24px;
-  box-shadow: 0 4px 10px rgba(183,144,77,0.4);
 }
 
-.menu-category:hover .dropdown-list { display: flex; }
+/* VISIBLE STATE (Added via JavaScript) */
+.dropdown-list.show {
+  max-height: 500px; /* Large enough to fit your longest list */
+  opacity: 1;
+  margin-top: 6px;
+  transform: translateY(0);
+  
+  /* Restore aesthetics */
+  border: 1px solid #e5dac8;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+}
 
 /* ===============================
    RIGHT SIDE MENU ITEMS
@@ -138,7 +155,7 @@
 
 .menu-items h3 {
   margin-top: 25px;
-  color: #3e2a1b;
+  color: #f9e0cb; 
   font-weight: 600;
   position: relative;
 }
@@ -147,7 +164,7 @@
   display: block;
   width: 60px;
   height: 3px;
-  background: #b7904d;
+  background: #f4c676;
   margin-top: 6px;
   border-radius: 2px;
 }
@@ -205,37 +222,104 @@
   /* CHANGED: Larger font size */
   font-size: 1.1rem; 
   font-weight: 600;
-  color: #3e2a1b;
+  color: #e9b68f;
   line-height: 1.3;
 }
 .item span {
   /* CHANGED: Larger sub-text */
   font-size: 0.95rem; 
-  color: #7a5b40;
+  color: #d19866;
 }
+
+/* ===============================
+   MENU ITEM ANIMATIONS
+================================ */
+
+/* 1. The Slide-Up Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px); /* Starts lower down */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Moves to original spot */
+  }
+}
+
+/* 2. Apply it to every item */
+.item {
+  /* Keep your existing styles, just add this animation line: */
+  animation: fadeInUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+  
+  /* "backwards" makes sure they are invisible before the animation starts */
+}
+
+/* 3. Stagger the items (The Wave Effect) */
+/* This adds a tiny delay to each item so they don't all pop in at once */
+.item:nth-child(1) { animation-delay: 0.10s; }
+.item:nth-child(2) { animation-delay: 0.15s; }
+.item:nth-child(3) { animation-delay: 0.20s; }
+.item:nth-child(4) { animation-delay: 0.25s; }
+.item:nth-child(5) { animation-delay: 0.30s; }
+.item:nth-child(6) { animation-delay: 0.35s; }
+.item:nth-child(7) { animation-delay: 0.40s; }
+.item:nth-child(8) { animation-delay: 0.45s; }
+.item:nth-child(9) { animation-delay: 0.50s; }
+.item:nth-child(10) { animation-delay: 0.55s; }
+.item:nth-child(11) { animation-delay: 0.60s; }
+.item:nth-child(12) { animation-delay: 0.65s; }
+/* You can add more if you have many items per section */
 
 /* ===============================
    MENU SECTIONS & DIVIDERS
 ================================ */
-.menu-section {
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  padding: 20px;
-  border-radius: 15px;
-  background: rgba(122, 115, 95, 0.25);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-}
-.menu-section.hidden {
-  opacity: 0;
-  transform: scale(0.95);
-  pointer-events: none;
+
+/* 1. Define the Box Animation (Soft Pop-in) */
+@keyframes boxEntrance {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(30px); /* Starts smaller and lower */
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0); /* Grows to full size */
+  }
 }
 
+/* 2. Apply to the Section Class */
+.menu-section {
+  /* Keep your existing styles */
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(75, 46, 5, 0.85); /* The brown background */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  
+  /* Add the Animation */
+  animation: boxEntrance 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  
+  /* Ensure it's invisible before animation starts */
+  opacity: 0; 
+  
+  /* FIX: Stops the scroll 120px above the section so the title is visible */
+  scroll-margin-top: 120px;
+}
+
+/* 3. Stagger the Sections */
+.menu-section:nth-of-type(1) { animation-delay: 0.1s; }
+.menu-section:nth-of-type(2) { animation-delay: 0.3s; }
+.menu-section:nth-of-type(3) { animation-delay: 0.5s; }
+.menu-section:nth-of-type(4) { animation-delay: 0.7s; }
+.menu-section:nth-of-type(5) { animation-delay: 0.9s; }
+.menu-section:nth-of-type(6) { animation-delay: 1.1s; }
+.menu-section:nth-of-type(7) { animation-delay: 1.3s; }
+
+/* 4. The Divider Line (KEEP THIS) */
 hr {
   margin: 15px 0; 
   border: 0;
   border-top: 1px solid #d1b885;
 }
-
 /* ===============================
    MODAL
 ================================ */
@@ -564,3 +648,53 @@ hr {
     display: none;
   }
 }
+
+#menu-page {
+  padding-top: 10px !important; 
+  padding-left: 20px !important; 
+  padding-right: 20px !important;
+  padding-bottom: 40px !important;
+
+  /* BACKGROUND WITH TINT FILTER */
+  /* The linear-gradient acts as a see-through color layer on top of the image */
+  background-image: 
+    linear-gradient(rgba(75, 46, 5, 0.1), rgba(75, 46, 5, 0.1)),
+    url('../images/menu-bg.jpg');
+    
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 80vh;
+}
+
+/* This targets the subtitle text like "Classic & Espresso Based" */
+.menu-section > p {
+  color: #c39775;      /* Change this to your desired color (e.g., #000000) */
+  font-size: 1.1rem;   /* Optional: Make it slightly larger */
+  font-weight: 500;    /* Optional: Make it slightly thicker */
+  margin-bottom: 15px; /* Adds space between this text and the pictures */
+  margin-top: -5px;    /* Pulls it slightly closer to the header if needed */
+}
+
+/* ===============================
+   FIX GAP ABOVE FOOTER
+================================ */
+
+/* 1. Ensure the main container doesn't have extra bottom spacing */
+main {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* 2. Remove bottom margin from the menu section itself */
+#menu-page {
+  margin-bottom: 0 !important;
+  /* Optional: Add a negative margin if the gap is stubborn */
+  /* margin-bottom: -5px !important; */ 
+}
+
+/* 3. Ensure the footer doesn't push itself away from the content */
+footer {
+  margin-top: 0 !important;
+}
+

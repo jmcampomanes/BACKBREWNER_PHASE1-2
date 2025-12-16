@@ -37,7 +37,7 @@
 
 /* Cards */
 .previous-card {
-  background: rgba(122, 115, 95, 0.25);
+  background: rgba(75, 46, 5, 0.85);
   border-radius: 25px;
   text-align: center;
   padding: 25px;
@@ -59,12 +59,13 @@
 .previous-card h3 {
   margin: 0;
   font-size: 1.2rem;
-  color: #3e2a1b;
+  color: #e9b68f;
 }
 
 .previous-card p {
   font-size: 0.95rem;
-  color: #7a5b40;
+  font-weight: 600;
+  color: #d19866;
 }
 
 /* Hover Effects */

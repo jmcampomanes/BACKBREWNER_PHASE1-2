@@ -72,3 +72,34 @@ if (contactForm) {
 }
 
 
+/* ====== Sidebar: Auto-Open Active Category ====== */
+document.addEventListener("DOMContentLoaded", () => {
+  const categories = document.querySelectorAll(".menu-category");
+
+  categories.forEach(category => {
+    const btn = category.querySelector(".dropdown-btn");
+    const list = category.querySelector(".dropdown-list");
+    
+    if (btn && list) {
+      // Check if the button is wrapped in a link (<a> tag)
+      // If parent is <a>, it means clicking it navigates to another page.
+      // If parent is NOT <a>, it means we are currently ON this page.
+      const isLink = btn.parentElement.tagName === 'A';
+
+      if (!isLink) {
+        // We are on this page (e.g., on Foods page, the Foods button has no link)
+        // 1. Auto-open the menu so sub-categories are visible immediately
+        list.classList.add("show");
+
+        // 2. Allow clicking the button to toggle the menu closed/open
+        btn.addEventListener("click", (e) => {
+          // Prevent any default behavior just in case
+          e.preventDefault(); 
+          list.classList.toggle("show");
+        });
+      }
+      // If it IS a link, we do nothing. The browser will navigate to the
+      // matched HTML page, and this script will run THERE to open the menu.
+    }
+  });
+});
