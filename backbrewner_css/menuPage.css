@@ -6,23 +6,53 @@
 /* ===============================
    MENU PAGE TABS
 ================================ */
+
+/* ===============================
+   MENU PAGE TABS (Fixed & Scrable)
+================================ */
 .menu-tabs {
+  /* 1. FORCE IT TO STAY PUT */
+  position: fixed; 
+  top: 85px; /* Sits exactly below your main Header */
+  left: 0;
+  width: 100%; /* Spans the full width of the screen */
+  
+  /* 2. Visuals */
+  background: #F5E6CA; /* Solid background hides scrolling content */
+  z-index: 48; /* High priority, but below the Header (z-index 9999) */
+  padding: 15px 20px; /* Padding for looks */
+  border-bottom: 2px solid #b7904d;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Adds a little shadow */
+  
+  /* 3. Make it "Scrable" (Horizontal Scroll) */
   display: flex;
   gap: 30px;
-  border-bottom: 2px solid #b7904d;
-  margin-bottom: 15px;
+  overflow-x: auto; /* Allows swiping left/right */
+  white-space: nowrap; /* Keeps items in a single line */
+  
+  /* Hide the scrollbar for cleanliness */
+  scrollbar-width: none; /* Firefox */
 }
+
+/* Hide scrollbar for Chrome/Safari */
+.menu-tabs::-webkit-scrollbar {
+  display: none;
+}
+
 .menu-tabs a {
   text-decoration: none;
   color: #3e2a1b;
-  padding-bottom: 10px;
-  transition: 0.3s;
   font-weight: 600;
+  font-size: 16px;
+  transition: 0.3s;
+  flex-shrink: 0; /* Prevents text from squishing */
 }
+
 .menu-tabs a:hover,
 .menu-tabs a.active {
-  border-bottom: 3px solid #b7904d;
   color: #b7904d;
+  /* We use color instead of border-bottom here because 
+     the fixed container has its own border */
 }
 
 /* ===============================
@@ -36,17 +66,67 @@
 }
 
 /* ===============================
-   SIDEBAR
+   DESKTOP: FIXED SIDEBAR (Nuclear Fix)
 ================================ */
-.side-menu {
-  position: sticky;
-  top: 100px;
-  align-self: flex-start;
-  padding: 5px;
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;  
+@media (min-width: 1024px) {
+  
+  .menu-container {
+    /* We don't need flexbox for layout anymore since sidebar is fixed */
+    display: block; 
+    position: relative;
+  }
+
+  .side-menu {
+    /* FORCE IT TO STAY PUT */
+    position: fixed; 
+    top: 150px; /* Distance below your header */
+    left: max(20px, calc((100% - 5000px) / 2)); /* Keeps it aligned with content */
+    
+    width: 220px;
+    height: calc(100vh - 130px); /* Full height minus header */
+    overflow-y: auto; /* Allows scrolling INSIDE sidebar if needed */
+    z-index: 50;
+    
+    /* Visuals */
+    padding-right: 10px; /* Space for inner scrollbar */
+  }
+
+  .menu-items {
+    /* Push content to the right so sidebar doesn't cover it */
+    margin-left: 250px; 
+    width: auto;
+    
+    /* Keep your original border */
+    border-left: 2px solid #d1b885;
+    padding-left: 30px;
+  }
+  
+  /* Hide the sidebar scrollbar to keep it clean */
+  .side-menu::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+}
+
+/* ===============================
+   MOBILE/TABLET: NORMAL LAYOUT
+================================ */
+@media (max-width: 1023px) {
+  .menu-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .side-menu {
+    position: relative;
+    width: 100%;
+    top: 0;
+    margin-bottom: 20px;
+  }
+  .menu-items {
+    margin-left: 0;
+    border-left: none;
+    padding-left: 0;
+  }
 }
 
 /* Sidebar dropdown */
@@ -143,6 +223,7 @@
   padding: 20px; 
   display: flex;
   flex-direction: column;
+  padding-top: 45px;
   gap: 30px;
 }
 
@@ -659,7 +740,7 @@ hr {
   /* The linear-gradient acts as a see-through color layer on top of the image */
   background-image: 
     linear-gradient(rgba(75, 46, 5, 0.1), rgba(75, 46, 5, 0.1)),
-    url('../images/menu-bg.jpg');
+    url('../images/menu-bg1.jpg');
     
   background-size: cover;
   background-position: center;

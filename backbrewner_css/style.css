@@ -17,8 +17,13 @@ body {
   overflow-x: hidden;
 }
 
-html, body {
-  overflow-x: hidden !important;
+/* Apply only to body to prevent breaking sticky elements */
+body {
+  overflow-x: hidden;
+  overflow-y: visible; 
+}
+html {
+  overflow-x: hidden;
 }
 
 h1, h2 {
