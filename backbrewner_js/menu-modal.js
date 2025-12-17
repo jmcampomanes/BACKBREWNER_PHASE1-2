@@ -12,7 +12,7 @@ const productsDatabase = {
   "mocha_hot": { name: "Café Mocha", image: "images/mocha.jpg", calories: 250, price: 160, description: "A delicious blend of espresso, steamed milk, and rich chocolate." },
   "flat_white": { name: "Flat White", image: "images/flat_white.jpg", calories: 110, price: 150, description: "Espresso with silky microfoam milk for a velvety texture." },
   "macchiato": { name: "Macchiato", image: "images/macchiato.jpg", calories: 15, price: 130, description: "Espresso 'stained' with a dash of frothy milk." },
-  "americano": { name: "Americano", image: "images/americano.jpg", calories: 5, price: 120, description: "Espresso diluted with hot water for a classic black coffee taste." },
+  "americano": { name: "Americano", image: "images/hotamericano.jpg", calories: 5, price: 120, description: "Espresso diluted with hot water for a classic black coffee taste." },
 
   // --- Cold Coffee ---
   "iced_coffee": { name: "Iced Coffee", image: "images/iced_coffee.jpg", calories: 80, price: 130, description: "Our signature coffee poured over ice." },
@@ -21,34 +21,34 @@ const productsDatabase = {
   "iced_caramel": { name: "Iced Caramel", image: "images/caramel_latte.jpg", calories: 250, price: 170, description: "Sweet caramel blended with coffee and milk over ice." },
 
   // --- Hot Tea ---
-  "green_tea": { name: "Green Tea", image: "images/herbal_tea.jpg", calories: 2, price: 100, description: "Antioxidant-rich green tea leaves steeped to perfection." },
-  "earl_grey": { name: "Earl Grey", image: "images/herbal_tea2.jpg", calories: 2, price: 110, description: "Black tea flavored with the oil of bergamot." },
+  "green_tea": { name: "Green Tea", image: "images/hotgreentea.jpg", calories: 2, price: 100, description: "Antioxidant-rich green tea leaves steeped to perfection." },
+  "earl_grey": { name: "Earl Grey", image: "images/earltea.jpg", calories: 2, price: 110, description: "Black tea flavored with the oil of bergamot." },
   "chamomile": { name: "Chamomile", image: "images/herbal_tea3.jpg", calories: 0, price: 100, description: "Soothing floral tea, perfect for relaxation." },
   "jasmine_tea": { name: "Jasmine Tea", image: "images/herbal_tea4.jpg", calories: 2, price: 110, description: "Fragrant tea infused with jasmine blossoms." },
 
   // --- Cold Tea ---
-  "classic_iced_tea": { name: "Classic Iced Tea", image: "images/herbal_tea.jpg", calories: 90, price: 120, description: "Refreshing black tea served ice cold with lemon." },
-  "peach_iced_tea": { name: "Peach Iced Tea", image: "images/herbal_tea2.jpg", calories: 110, price: 130, description: "Sweet and fruity peach flavored iced tea." },
+  "classic_iced_tea": { name: "Classic Iced Tea", image: "images/icedtea.jpg", calories: 90, price: 120, description: "Refreshing black tea served ice cold with lemon." },
+  "peach_iced_tea": { name: "Peach Iced Tea", image: "images/icedpeachtea.jpg", calories: 110, price: 130, description: "Sweet and fruity peach flavored iced tea." },
   "iced_matcha_tea": { name: "Iced Matcha", image: "images/matcha_latte.jpg", calories: 180, price: 150, description: "Premium matcha green tea mixed with milk and ice." },
-  "lemon_tea": { name: "Lemon Tea", image: "images/fruit_juice.jpg", calories: 100, price: 120, description: "Zesty lemon infused tea for a citrus kick." },
+  "lemon_tea": { name: "Lemon Tea", image: "images/icedlemontea.jpg", calories: 100, price: 120, description: "Zesty lemon infused tea for a citrus kick." },
 
   // --- Fruit Tea ---
-  "passion_fruit": { name: "Passion Fruit Tea", image: "images/fruit_juice.jpg", calories: 130, price: 140, description: "Exotic passion fruit flavors infused in tea." },
-  "strawberry_tea": { name: "Strawberry Tea", image: "images/fruit_juice2.jpg", calories: 140, price: 140, description: "Sweet strawberry infusion, perfect for summer." },
-  "lychee_tea": { name: "Lychee Tea", image: "images/fruit_juice3.jpg", calories: 135, price: 140, description: "Fragrant and sweet lychee flavored tea." },
-  "mango_green_tea": { name: "Mango Green Tea", image: "images/fruit_juice4.jpg", calories: 125, price: 140, description: "Tropical mango blended with refreshing green tea." },
+  "passion_fruit": { name: "Passion Fruit Tea", image: "images/passiontea.jpg", calories: 130, price: 140, description: "Exotic passion fruit flavors infused in tea." },
+  "strawberry_tea": { name: "Strawberry Tea", image: "images/strawberrytea.jpg", calories: 140, price: 140, description: "Sweet strawberry infusion, perfect for summer." },
+  "lychee_tea": { name: "Lychee Tea", image: "images/lycheetea.jpg", calories: 135, price: 140, description: "Fragrant and sweet lychee flavored tea." },
+  "mango_green_tea": { name: "Mango Green Tea", image: "images/mangotea.jpg", calories: 125, price: 140, description: "Tropical mango blended with refreshing green tea." },
 
   // --- Frappuccino ---
   "coffee_jelly": { name: "Coffee Jelly Frap", image: "images/frappuccino.jpg", calories: 450, price: 180, description: "Blended coffee with chewy coffee jelly cubes." },
-  "vanilla_cream": { name: "Vanilla Cream Frap", image: "images/vanilla_cream.jpg", calories: 380, price: 170, description: "Creamy vanilla blend (caffeine-free option)." },
+  "vanilla_cream": { name: "Vanilla Cream Frap", image: "images/vanillafrap.jpg", calories: 380, price: 170, description: "Creamy vanilla blend (caffeine-free option)." },
   "hazelnut_frap": { name: "Hazelnut Frap", image: "images/hazelnut.jpg", calories: 420, price: 180, description: "Nutty hazelnut syrup blended with coffee and ice." },
   "java_chip": { name: "Java Chip Frap", image: "images/mocha.jpg", calories: 480, price: 190, description: "Coffee blend with chocolate chips and drizzle." },
 
   // --- Bottled Beverages ---
   "fresh_milk": { name: "Fresh Milk", image: "images/milk.jpg", calories: 150, price: 80, description: "Pure, fresh dairy milk." },
-  "bottled_juice": { name: "Bottled Juice", image: "images/fruit_juice.jpg", calories: 140, price: 90, description: "Freshly squeezed bottled orange juice." },
+  "bottled_juice": { name: "Bottled Juice", image: "images/orange.jpg", calories: 140, price: 90, description: "Freshly squeezed bottled orange juice." },
   "choco_milk": { name: "Choco Milk", image: "images/hot_chocolate.jpg", calories: 200, price: 100, description: "Rich and creamy chocolate milk." },
-  "mineral_water": { name: "Mineral Water", image: "images/milk2.jpg", calories: 0, price: 40, description: "Clean and refreshing bottled water." },
+  "mineral_water": { name: "Mineral Water", image: "images/mineral.jpg", calories: 0, price: 40, description: "Clean and refreshing bottled water." },
 
   // ====================================================
   // 2. PRODUCTS PAGE (MERCH & BEANS)
