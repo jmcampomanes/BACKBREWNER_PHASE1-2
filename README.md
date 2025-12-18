@@ -40,8 +40,8 @@ The primary purpose of this project is to provide an online presence for Backbre
 * **Layout:** A Mobile-First responsive design approach using CSS Grid and Flexbox to ensure the site adapts to all screen sizes.
 
 ## Deployment
-* **GitHub Repository:** [Insert your GitHub Repository Link Here]
-* **Live Site:** [Insert your GitHub Pages/Live Link Here]
+* **GitHub Repository:** https://github.com/jmcampomanes/BACKBREWNER_PHASE1-2/
+* **Live Site:** https://jmcampomanes.github.io/BACKBREWNER_PHASE1-2/
 
 ## Lessons Learned
 * **Bridging Design & Tech:** Learned how to translate creative design concepts into technical execution using code.
