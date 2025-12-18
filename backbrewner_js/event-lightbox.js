@@ -5,7 +5,7 @@ const eventsDatabase = {
     date: "Available on Spotify & YouTube Music starting December 15",
     description: "Curated by our top baristas, this playlist is the perfect backdrop for your holiday season. Featuring cozy jazz, lo-fi beats, and warm acoustic tracks.",
     cta: "Follow us on Spotify to listen now!",
-    url: "https://spotify.com/backbrewner" 
+    url: "https://open.spotify.com/playlist/37i9dQZF1E8Mc4fxINFUP0" 
   },
   "holiday-sale": {
     title: "☕ Holiday Brew Sale: 20% Off",
@@ -19,7 +19,7 @@ const eventsDatabase = {
     date: "Last Friday of every month @ 7:00 PM PST",
     description: "Join our virtual open-mic stream! Whether you're a seasoned poet or a first-timer, come share your latest work or just enjoy the cozy atmosphere and great coffee.",
     cta: "Tune in live on our YouTube channel!",
-    url: "https://youtube.com/backbrewner" 
+    url: "https://www.youtube.com/watch?v=Mxs9m7shLDc" 
   }
 };
 
